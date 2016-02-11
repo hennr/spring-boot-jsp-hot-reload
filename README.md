@@ -25,7 +25,7 @@ This works for stuff shown on the JSP (like the application.message from the app
 but not with most changes done to the JSP itself, like adding an output or a tag.
  
 If you want to give it a try, 
-install the [firefox plugin](https://addons.mozilla.org/de/firefox/addon/livereload/] or search for (other plugins)[http://livereload.com/extensions/)
+install the [firefox plugin](https://addons.mozilla.org/de/firefox/addon/livereload/) or search for [other plugins](http://livereload.com/extensions/)
 
 
 
