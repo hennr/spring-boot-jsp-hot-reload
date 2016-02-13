@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(Application.class)
@@ -27,14 +27,14 @@ public class ApplicationTests {
 	public void testJspWithEl() throws Exception {
 		ResponseEntity<String> entity = new TestRestTemplate()
 				.getForEntity("http://localhost:" + this.port, String.class);
-		assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
+		assertEquals(HttpStatus.OK, entity.getStatusCode());
 	}
 
 	@Test
 	public void slashFooReturnsFoo() {
 		ResponseEntity<String> entity = new TestRestTemplate()
 				.getForEntity("http://localhost:" + this.port + "/amigos", String.class);
-		assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
-		assertThat(entity.getBody()).isEqualTo("si");
+		assertEquals(HttpStatus.OK, entity.getStatusCode());
+		assertEquals("si", entity.getBody());
 	}
 }
